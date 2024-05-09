@@ -28,20 +28,11 @@ This plugin work with molder.
 autocmd FileType molder call s:molder_settings()
 
 function! s:molder_settings() abort
-  nnoremap <buffer><silent> l
-    \ <Cmd>call molder#open()<CR> 
-
   nnoremap <buffer><silent> N
     \ <Cmd>call molder#extension#operations#newfile()<CR>
 
   nnoremap <buffer><silent> K
-    \ <Cmd>call molder#extension#operations#newdir()<CR> 
-
-  nnoremap <buffer><silent> R
-    \ <Cmd>call molder#extension#operations#rename()<CR>
-
-  nnoremap <buffer><silent> D
-    \ <Cmd>call molder#extension#operations#delete()<CR>
+    \ <Cmd>call molder#extension#operations#newdir_parents()<CR> 
 endfunction
 ```
 
