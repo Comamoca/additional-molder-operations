@@ -1,0 +1,37 @@
+*additional-molder-operations.txt*    Additional Operation plugin for podium.
+=============================================================================
+additional-molder-operations~
+
+Additional Operation plugin for podium vim-molder |https://github.com/mattn/vim-molder/|.
+
+additional-molder-operations-installation~
+
+You must install with vim-molder |https://github.com/mattn/vim-molder/|.
+>
+  Plug 'mattn/vim-molder'
+  Plug 'mattn/vim-molder-operations'
+  Plug 'comamoca/additional-molder-operations'
+<
+additional-molder-operations-functions~
+
+                                                          *molder#extension#operations#newfile()*
+molder#extension#operations#newfile()({alias-type})
+		Create new file.
+
+                                                          *molder#extension#operations#newdir_parents()*
+molder#extension#operations#newdir_parents()({alias-type})
+		Create new directory and parents directory. It is like `mkdir -p`.
+
+additional-molder-operations-example~
+>
+  autocmd FileType molder call s:molder_settings()
+  
+  function! s:molder_settings() abort
+    nnoremap <buffer><silent> N
+      \ <Cmd>call molder#extension#operations#newfile()<CR>
+    nnoremap <buffer><silent> K
+      \ <Cmd>call molder#extension#operations#newdir_parents()<CR> 
+  endfunction
+
+<
+vim:tw=78:ts=8:noet:ft=help:norl:
