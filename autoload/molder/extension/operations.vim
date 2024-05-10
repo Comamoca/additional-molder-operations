@@ -41,5 +41,6 @@ endfunction
 
 
 function! s:newfile(filename) abort
-		execute "redir > " . a:filename
+	let l:pwd = molder#curdir()
+	execute "redir > " . l:pwd . a:filename
 endfunction
